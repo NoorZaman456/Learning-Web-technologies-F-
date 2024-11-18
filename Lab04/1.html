@@ -1,0 +1,59 @@
+<html>
+<head>
+    <title></title>
+    <script>
+        function validateForm() {
+            var name = document.forms["Form"]["name"].value;
+            var nameRegex = /^[a-zA-Z][a-zA-Z.-]*$/;
+            var words = name.trim().split(/\s+/);
+
+        
+            if (name === "") {
+                alert("Name cannot be empty.");
+                return false;
+            }
+
+           
+            if (words.length < 2) {
+                alert("Name must contain at least two words.");
+                return false;
+            }
+
+            
+            if (!/^[a-zA-Z]/.test(name)) {
+                alert("Name must start with a letter.");
+                return false;
+            }
+
+          
+            if (!nameRegex.test(name)) {
+                alert("Name can only contain letters, periods, and dashes.");
+                return false;
+            }
+
+            return true; 
+        }
+    </script>
+
+</head>
+<body>
+    <h1></h1>
+    <form name="Form" action="" onsubmit="return validateForm()" style="width: 15%; height: 20%;">
+        <fieldset>
+            <legend>NAME</legend>
+            <table border="0" style="width: 50%; height: 50%;">
+                <tr>
+                    <td>
+                       
+                        <input type="text" name="name" placeholder="" />
+                        <br>
+                        
+                        <hr>
+                        <input type="submit" value="Submit" />
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+</body>
+</html>

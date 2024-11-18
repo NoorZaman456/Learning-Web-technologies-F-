@@ -1,0 +1,45 @@
+<html>
+<head>
+    <title></title>
+    <script>
+        function validateForm() {
+            var email = document.forms["Form"]["name"].value;
+            
+         
+            if (email === "") {
+                alert("Email cannot be empty.");
+                return false;
+            }
+
+           
+            var emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!emailRegex.test(email)) {
+                alert("Please enter a valid email address (e.g., anything@example.com).");
+                return false;
+            }
+
+            return true; 
+        }
+    </script>
+</head>
+<body>
+    <h1></h1>
+    <form name="Form" action="" onsubmit="return validateForm()" style="width: 15%; height: 20%;">
+        <fieldset>
+            <legend>Email</legend>
+            <table border="0" style="width: 50%; height: 50%;">
+                <tr>
+                    <td>
+                        
+                        <input type="text" name="name" />
+                        <br>
+                
+                        <hr>
+                        <input type="submit" value="Submit" />
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+</body>
+</html>
